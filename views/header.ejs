@@ -1,0 +1,42 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+
+
+        <a class="navbar-brand" href="/">Deusire</a>
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/inventory">Products</a>
+            </li>
+            <% if (session && session.user) { %>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= session.user.role === 'dataEntryClerk' ? '/inventory/list' : '/cart' %>">
+                  Welcome, <%= session.user.firstName %>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/sign-up">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/log-in">Login</a>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>

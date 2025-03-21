@@ -1,0 +1,22 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+}
+  .error{
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+  }
+  main{
+    flex-grow: 1;
+  }
+  
